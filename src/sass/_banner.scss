@@ -1,0 +1,27 @@
+.banner {
+    $bg: gray;
+    background-color: $bg;
+    border: solid 1pt;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 25px;
+
+    /* nesting */
+    &__btn {
+        $cor: orange;
+        background-color: $cor;
+        @include btn-hover(darken($cor, 8%));
+        @extend %extend-btn;
+
+        /* nesting */
+        &--danger {
+            $cor: red;
+            color: green;
+            background-color: $cor;
+            @include btn-hover(darken($cor, 8%));
+            @extend .banner__btn;
+        }
+    }
+}

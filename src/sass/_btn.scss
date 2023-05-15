@@ -1,0 +1,27 @@
+@function teste(){
+    @return 10%
+}
+
+@mixin btn-hover($cor) {
+    transition: all .8s;
+    &:hover {
+        background-color: $cor;
+        color: white;
+    }
+}
+
+%extend-btn {
+    color: brown;
+    margin: 5px;
+    padding: 10px;
+    border: solid 1pt;
+    border-radius: teste();
+    font-size: 1.5rem;
+}
+
+.btn {
+    $cor: #0ad2ec;
+    background-color: $cor;
+    @extend %extend-btn;
+    @include btn-hover(darken($cor, 8%));
+}
