@@ -1,9 +1,15 @@
-@function teste(){
-    @return 10%
+@function setRadius($val){
+    // exemplo de if
+    @if $val > 50% {
+        $val: 50%
+    } @else if $val < 0% {
+        $val: 10%
+    }
+    @return $val
 }
 
 @mixin btn-hover($cor) {
-    transition: all .8s;
+    transition: all .5s;
     &:hover {
         background-color: $cor;
         color: white;
@@ -15,7 +21,7 @@
     margin: 5px;
     padding: 10px;
     border: solid 1pt;
-    border-radius: teste();
+    border-radius: setRadius(10%);
     font-size: 1.5rem;
 }
 

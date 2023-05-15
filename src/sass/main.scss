@@ -8,3 +8,29 @@ body {
 
 @import "./_btn";
 @import "./_banner";
+
+// exemplo oop for
+@for $i from 1 through 5 {
+    // interpolação
+    .li#{$i} {
+       background-color: lighten($bg, 10% * $i)
+    }
+}
+
+// exemplo loop wile
+$z: 2;
+$bg: #ffffff7e;
+
+@while $z <= 10 {
+    .li#{$z} {
+        color: darken($bg, 5% * $z);
+    }
+     $z: $z + 2;
+}
+// exemplo de loop each
+$sizes: 40, 50, 60;
+@each $size in $sizes {
+    .icon-#{$size} {
+        padding: $size + px;
+    }
+}
